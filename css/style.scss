@@ -1,0 +1,185 @@
+$primary: #994a02;
+$secondary: #f78d29;
+$light: #f4f4f4;
+$dark: #333;
+$success: #19cd19;
+$danger: #dc143c;
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 25px;
+    background: rgba(0,0,0,.3);
+}
+::-webkit-scrollbar-thumb{
+    background: $dark;
+    border-radius: 25px;
+}
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(90deg, $secondary, $primary);
+    color: $light;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.8em;
+    margin: 0;
+    font-weight: 700;
+}
+.btn:active{
+    transform: scale(.96);
+}
+
+.icon{
+    pointer-events: none;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.title{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 100px;
+    text-shadow: 0 2px 6px rgba(0,0,0,.6);
+}
+
+.forms{
+    display: flex;
+    align-items: center;
+    max-width: 98%;
+
+    .select{
+        margin-left: 0.2em;
+        box-shadow: 0 4px 8px rgba(0,0,0,.3);
+       
+        select{
+            padding: 0.7em;
+            font-size: 1rem;
+        }
+    }
+}
+
+form{
+    display: flex;
+    margin: 1em 0;
+    width: 380px;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+
+    .add-task-input{
+        width: 100%;
+        border: none;
+        padding: 0.8em;
+        font-size: 1rem;
+        letter-spacing: 1px;
+
+        &:focus{
+            outline-color: $dark;
+            outline-style: double;
+        }
+    }
+
+    .add-task-btn{
+        background-color: $light;
+        color: $primary;
+        padding: 0.8em;
+        transition: .2s;
+
+        &:hover{
+            background-color: $secondary;
+            color: $light;
+        }
+    }
+}
+
+.all-tasks{
+    width: 460px;
+    max-width: 98%;
+
+        .tasks{
+            list-style: none;
+            width: 100%;
+        
+            .todo{
+                margin-top: 0.5em;
+                padding-left: 0.5em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: $light;
+                color: $dark;
+                transform-origin: left bottom;
+                box-shadow: 0 4px 8px rgba(0,0,0,.3);
+                transition: all .4s ease;
+
+                .task-name{
+                    color: $dark;
+                    font-size: 1.1rem;
+                    letter-spacing: 1px;
+                    font-weight: 600;
+                    flex: 1;
+                    transition: .2s;
+                }
+
+                .complete-btn{
+                    background-color: $success;
+                    color: $light;
+                }
+                .trash-btn{
+                    background-color: $danger;
+                    color: $light;
+                }
+            }
+            .completed{
+                text-decoration: line-through;
+                opacity: .5;
+                box-shadow: none;
+            }
+            .deleted{
+                // transform-origin: left bottom;
+                transform: translateY(10px) rotateZ(20deg);
+                opacity: 0;
+            }
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
